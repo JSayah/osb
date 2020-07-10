@@ -6,12 +6,12 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 import './main.scss'
 
 
-// Install BootstrapVue
+
 Vue.use(BootstrapVue)
-// Optionally install the BootstrapVue icon components plugin
 Vue.use(IconsPlugin)
 
 Vue.config.productionTip = false
+
 
 new Vue({
   render: h => h(App),

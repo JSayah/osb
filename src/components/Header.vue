@@ -7,9 +7,9 @@
 
         <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
-            <b-nav-item v-on:click="component = 'home-app'">Home</b-nav-item>
-            <b-nav-item v-on:click="component = 'about-app'">About</b-nav-item>
-            <b-nav-item v-on:click="component = 'pricing-app'">Pricing</b-nav-item>
+            <b-nav-item v-on:click="$emit('home')">Home</b-nav-item>
+            <b-nav-item v-on:click="$emit('about')">About Me</b-nav-item>
+            <b-nav-item v-on:click="$emit('pricing')">Pricing</b-nav-item>
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
