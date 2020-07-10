@@ -1,40 +1,5 @@
 <template>
   <div>
-    <!--<nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-    <div class="container">
-      <router-link to="/" class="navbar-brand">One Student Body</router-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
-        <ul class="navbar-nav ml-auto">
-          <template v-if="user.loggedIn">
-            <div class="nav-item">{{user.data.displayName}}</div>
-            <li class="nav-item">
-              <a class="nav-link" @click.prevent="signOut">Sign out</a>
-            </li>
-          </template>
-          <template v-else>
-            <li class="nav-item">
-              <router-link to="login" class="nav-link">Login</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="register" class="nav-link">Register</router-link>
-            </li>
-          </template>
-        </ul>
-      </div>
-    </div>
-  </nav>-->
     <b-navbar toggleable="lg" type="dark" variant="dark">
         <b-navbar-brand href="#"><b-icon-x-diamond></b-icon-x-diamond></b-navbar-brand>
 
@@ -49,11 +14,14 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
 
-
+          <template v-if="user.loggedIn">
+            <b-nav-item href="#">{{user.data.displayName}}</b-nav-item>
+            <b-nav-item @click.prevent="signOut">Logout</b-nav-item>
+          </template>
+          <template v-else>
             <b-nav-item href="#"><router-link to="login" class="nav-link">Login</router-link></b-nav-item>
             <b-nav-item href="#"><router-link to="register" class="nav-link">Register</router-link></b-nav-item>
-
-            
+          </template>  
         </b-navbar-nav>
         </b-collapse>
     </b-navbar>
@@ -89,5 +57,7 @@ export default {
 </script>
 
 <style>
-
+  #userName{
+    
+  }
 </style>

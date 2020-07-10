@@ -45,6 +45,6 @@ export default {
   }
   #homejumbo{
     margin-top: 8%;
-    width: 50%;
+    width: 80%;
   }
 </style>
