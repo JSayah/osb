@@ -1,14 +1,21 @@
 <template>
-  <div id='homediv' class=''>
+    <div id='homediv' class=''>
     <b-jumbotron bg-variant='dark' text-variant='light' id='homejumbo' border-variant='info'>
       <p id="title">ONE STUDENT BODY</p>
       <p id='statement'>Learning for the New World.</p>
     </b-jumbotron>
-  </div>
+    </div>
 </template>
-
 <script>
-
+import { mapGetters } from "vuex";
+export default {
+  computed: {
+    // map `this.user` to `this.$store.getters.user`
+    ...mapGetters({
+      user: "user"
+    })
+  }
+};
 </script>
 
 <style lang='scss'>
