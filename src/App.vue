@@ -15,8 +15,8 @@
         <b-navbar-nav class="ml-auto">
 
           <template v-if="user.loggedIn">
-            <b-nav-item href="#">{{user.data.displayName}}</b-nav-item>
-            <b-nav-item @click.prevent="signOut">Logout</b-nav-item>
+            <b-nav-item href="#"><router-link to="profile" class="nav-link">{{user.data.displayName}}</router-link></b-nav-item>
+            <b-nav-item class="nav-link" @click.prevent="signOut">Logout</b-nav-item>
           </template>
           <template v-else>
             <b-nav-item href="#"><router-link to="login" class="nav-link">Login</router-link></b-nav-item>

@@ -11,8 +11,16 @@ import Register from './components/Register'
 import Home from './components/Home.vue'
 import Courses from './components/Courses.vue'
 import store from './store.js'
+import Profile from './components/Profile.vue'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Card from './components/Cards/Card.vue'
 
+library.add(faCoffee)
 
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component(Card)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.use(Router)
@@ -58,11 +66,23 @@ const router = new Router({
     {
         path: '*',
         redirect: '/login'
+    },
+    {
+        path: '/profile',
+        name: 'Profile',
+        component: Profile,
+        beforeEnter: (to, from, next) => {
+          if(store.state.user.loggedIn == false) {
+              next(false);
+          } else {
+              next();
+          }
+      }
     }
 ]
 })
 
-export default router
+export default router 
 
 Vue.config.productionTip = false
 
