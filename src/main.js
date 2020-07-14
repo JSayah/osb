@@ -9,7 +9,7 @@ import Router from 'vue-router'
 import Login from './components/Login'
 import Register from './components/Register'
 import Home from './components/Home.vue'
-import About from './components/About.vue'
+import Courses from './components/Courses.vue'
 import store from './store.js'
 
 
@@ -34,12 +34,26 @@ const router = new Router({
     {
         path: '/home',
         name: 'Home',
-        component: Home
+        component: Home,
+        beforeEnter: (to, from, next) => {
+          if(store.state.user.loggedIn == false) {
+              next(false);
+          } else {
+              next();
+          }
+      }
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '/courses',
+      name: 'Courses',
+      component: Courses,
+      beforeEnter: (to, from, next) => {
+        if(store.state.user.loggedIn == false) {
+            next('/');
+        } else {
+            next();
+        }
+    }
     },
     {
         path: '*',

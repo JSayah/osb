@@ -11,6 +11,5 @@
 <style>
     #about{
         text-align: center;
-        color: white;
     }
 </style>

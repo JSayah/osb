@@ -83,5 +83,7 @@ export default {
 </script>
 
 <style>
-
+  .container{
+    padding-top: 5%;
+  }
 </style>
